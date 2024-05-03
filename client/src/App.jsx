@@ -20,6 +20,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout />,
+    errorElement: <Error />,
     children: [                              //nested route
       {
         index: true,                           //when we want to display the page when navigate on parent page we can use index as true
