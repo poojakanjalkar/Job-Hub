@@ -1,16 +1,13 @@
-#### Complete App
-
-[Jobify](https://jobify.live/)
 
 #### Create React APP
 
-[VITE](https://vitejs.dev/guide/)
+
 
 ```sh
 npm create vite@latest projectName -- --template react
 ```
 
-#### Vite - Folder and File Structure
+
 
 ```sh
 npm i
@@ -23,59 +20,19 @@ npm run dev
 - APP running on http://localhost:5173/
 - .jsx extension
 
-#### Remove Boilerplate
 
-- remove App.css
-- remove all code in index.css
 
-  App.jsx
 
-```jsx
-const App = () => {
-  return <h1>Jobify App</h1>;
-};
-export default App;
-```
 
-#### Project Assets
 
-- get assets folder from complete project
-- copy index.css
-- copy/move README.md (steps)
-  - work independently
-  - reference
-  - troubleshoot
-  - copy
 
-#### Global Styles
 
-- saves times on the setup
-- less lines of css
-- speeds up the development
 
-- if any questions about specific styles
-- Coding Addict - [Default Starter Video](https://youtu.be/UDdyGNlQK5w)
-- Repo - [Default Starter Repo](https://github.com/john-smilga/default-starter)
 
-#### Title and Favicon
-
-- add favicon.ico in public
-- change title and favicon in index.html
-
-```html
-<head>
-  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-  <title>Jobify</title>
-</head>
-```
 
 - resource [Generate Favicons](https://favicon.io/)
 
-#### Install Packages (Optional)
 
-- yes, specific package versions
-- specific commands will be provided later
-- won't need to stop/start server
 
 ```sh
 npm install @tanstack/react-query@4.29.5 @tanstack/react-query-devtools@4.29.6 axios@1.3.6 dayjs@1.11.7 react-icons@4.8.0 react-router-dom@6.10.0 react-toastify@9.1.2 recharts@2.5.0 styled-components@5.3.10
@@ -93,7 +50,7 @@ npm install @tanstack/react-query@4.29.5 @tanstack/react-query-devtools@4.29.6 a
 
 #### Setup Router
 
-- all my examples will include version !!!
+
 
 ```sh
 npm i react-router-dom@6.10.0
@@ -348,12 +305,6 @@ export default Error;
 #### Styled Components
 
 - CSS in JS
-- Styled Components
-- have logic and styles in component
-- no name collisions
-- apply javascript logic
-- [Styled Components Docs](https://styled-components.com/)
-- [Styled Components Course](https://www.udemy.com/course/styled-components-tutorial-and-project-course/?referralCode=9DABB172FCB2625B663F)
 
 ```sh
 npm install styled-components@5.3.10
@@ -367,43 +318,10 @@ const El = styled.el`
 `;
 ```
 
-- no name collisions, since unique class
-- vscode-styled-components extension
-- colors and bugs
 
-Landing.jsx
 
-```jsx
-import styled from 'styled-components';
 
-const Landing = () => {
-  return (
-    <div>
-      <h1>Landing</h1>
-      <StyledButton>Click Me</StyledButton>
-    </div>
-  );
-};
 
-const StyledButton = styled.button`
-  background-color: red;
-  color: white;
-`;
-export default Landing;
-```
-
-#### Style Entire React Component
-
-```js
-const Wrapper = styled.el``;
-
-const Component = () => {
-  return (
-    <Wrapper>
-      <h1> Component</h1>
-    </Wrapper>
-  );
-};
 ```
 
 - only responsible for styling
@@ -436,104 +354,11 @@ const Wrapper = styled.div`
 export default Landing;
 ```
 
-#### Landing Page
+ 
 
-```jsx
-import main from '../assets/images/main.svg';
-import { Link } from 'react-router-dom';
-import logo from '../assets/images/logo.svg';
-import styled from 'styled-components';
-const Landing = () => {
-  return (
-    <StyledWrapper>
-      <nav>
-        <img src={logo} alt='jobify' className='logo' />
-      </nav>
-      <div className='container page'>
-        {/* info */}
-        <div className='info'>
-          <h1>
-            job <span>tracking</span> app
-          </h1>
-          <p>
-            I'm baby wayfarers hoodie next level taiyaki brooklyn cliche blue
-            bottle single-origin coffee chia. Aesthetic post-ironic venmo,
-            quinoa lo-fi tote bag adaptogen everyday carry meggings +1 brunch
-            narwhal.
-          </p>
-          <Link to='/register' className='btn register-link'>
-            Register
-          </Link>
-          <Link to='/login' className='btn'>
-            Login / Demo User
-          </Link>
-        </div>
-        <img src={main} alt='job hunt' className='img main-img' />
-      </div>
-    </StyledWrapper>
-  );
-};
+ 
 
-const StyledWrapper = styled.section`
-  nav {
-    width: var(--fluid-width);
-    max-width: var(--max-width);
-    margin: 0 auto;
-    height: var(--nav-height);
-    display: flex;
-    align-items: center;
-  }
-  .page {
-    min-height: calc(100vh - var(--nav-height));
-    display: grid;
-    align-items: center;
-    margin-top: -3rem;
-  }
-  h1 {
-    font-weight: 700;
-    span {
-      color: var(--primary-500);
-    }
-    margin-bottom: 1.5rem;
-  }
-  p {
-    line-height: 2;
-    color: var(--text-secondary-color);
-    margin-bottom: 1.5rem;
-    max-width: 35em;
-  }
-  .register-link {
-    margin-right: 1rem;
-  }
-  .main-img {
-    display: none;
-  }
-  .btn {
-    padding: 0.75rem 1rem;
-  }
-  @media (min-width: 992px) {
-    .page {
-      grid-template-columns: 1fr 400px;
-      column-gap: 3rem;
-    }
-    .main-img {
-      display: block;
-    }
-  }
-`;
 
-export default Landing;
-```
-
-#### Assets/Wrappers
-
-- css optional
-
-  Landing.jsx
-
-```jsx
-import Wrapper from '../assets/wrappers/LandingPage';
-```
 
 #### Logo Component
 
