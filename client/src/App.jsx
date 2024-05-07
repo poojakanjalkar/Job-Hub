@@ -37,8 +37,37 @@ const router = createBrowserRouter([
 
       },
       {
-        path: 'dashboard',
+        path: '/dashboard',
         element: <DashboardLayout />,
+        children: [
+          {
+            index: true,                           //when we want to display the page when navigate on parent page we can use index as true
+            element: <AddJob />
+          },
+          {
+            path: 'all-jobs',
+            element: <AllJobs />,
+
+          },
+          {
+            path: 'stats',
+            element: <Stats />,
+
+          },
+          {
+            path: 'profile',
+            element: <Profile />,
+
+          },
+          {
+            path: "admin",
+            element: <Admin />
+          }
+
+        ]
+
+
+
       },
     ]
   },
