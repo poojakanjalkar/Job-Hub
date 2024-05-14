@@ -16,6 +16,7 @@ export default function DashboardLayout() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   const toggleSidebar = () => {
+    console.log("+++++++++", showSidebar)
     setShowSidebar(!showSidebar);
   }
 
@@ -48,5 +49,5 @@ export default function DashboardLayout() {
 }
 
 export const useDashboardContext = () => {
-  useContext(DashboardContext)
+  return useContext(DashboardContext)
 }
