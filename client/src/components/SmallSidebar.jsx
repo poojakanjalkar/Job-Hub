@@ -5,6 +5,7 @@ import { FaTimes } from 'react-icons/fa';
 import Logo from './Logo';
 import links from '../utils/links';
 import { NavLink } from 'react-router-dom';
+import NavLinks from './NavLinks';
 
 export default function SmallSidebar() {
 
@@ -23,25 +24,7 @@ export default function SmallSidebar() {
           <header>
             <Logo />
           </header>
-          <div className="nav-links">
-            {links.map((link) => {
-              const { text, path, icon } = link;
-
-              return (
-                <NavLink
-                  to={path}
-                  key={text}
-                  className="nav-link"
-                  onClick={toggleSidebar}
-
-                  end //since we have nested structure dashboard is parrent add job is always active so to disable it use end prop
-                >
-                  <span className="icon">{icon}</span>
-                  {text}
-                </NavLink>
-              );
-            })}
-          </div>
+          <NavLinks />
         </div>
       </div>
     </Wrapper>
