@@ -28,22 +28,27 @@ export default function DashboardLayout() {
     console.log("logout user")
   }
   return (
-    <DashboardContext.Provider value={{ showSidebar, isDarkTheme, user, toggleDarkTheme, toggleSidebar, logoutUser }}>
+    <DashboardContext.Provider value={{
+      user,
+      showSidebar,
+      isDarkTheme,
+      toggleDarkTheme,
+      toggleSidebar,
+      logoutUser,
+    }}>
       <Wrapper>
-        <main cl="dashboard">
+        <main className="dashboard">
           <SmallSidebar />
           <BigSidebar />
           <div>
             <Navbar />
-            <div className='dashboard-page'>
-
+            <div className="dashboard-page">
               <Outlet />
             </div>
           </div>
         </main>
-
-
       </Wrapper>
+
     </DashboardContext.Provider>
   )
 }

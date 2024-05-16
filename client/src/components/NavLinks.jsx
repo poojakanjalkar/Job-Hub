@@ -3,7 +3,7 @@ import links from '../utils/links'
 import { useDashboardContext } from '../pages/DashboardLayout'
 import { NavLink } from 'react-router-dom'
 
-export default function NavLinks() {
+export default function NavLinks({ isBigSidebar }) {
 
   const { user, toggleSidebar } = useDashboardContext()
   return (
@@ -11,7 +11,7 @@ export default function NavLinks() {
       {links.map((link) => {
         const { path, icon, text } = link;
         return (
-          <NavLink to={path} key={text} onClick={toggleSidebar} className="nav-link" end>
+          <NavLink to={path} key={text} onClick={isBigSidebar ? null : toggleSidebar} className="nav-link" end>
             <span className='icon'>{icon}</span>
             {text}
           </NavLink>
