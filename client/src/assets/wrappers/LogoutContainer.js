@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   position: relative;
@@ -20,12 +20,12 @@ const Wrapper = styled.div`
     width: 100%;
     box-shadow: var(--shadow-2);
     text-align: center;
-    visibility: hidden;
+    visibility: hidden; //to hide initially
     border-radius: var(--border-radius);
     background: var(--primary-500);
   }
   .show-dropdown {
-    visibility: visible;
+    visibility: visible; //to visible button dropdown
   }
   .dropdown-btn {
     border-radius: var(--border-radius);
@@ -35,7 +35,7 @@ const Wrapper = styled.div`
     color: var(--white);
     letter-spacing: var(--letter-spacing);
     text-transform: capitalize;
-    cursor: pointer;
+    cursor: pointer; //to hover cursor
     width: 100%;
     height: 100%;
   }
