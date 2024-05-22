@@ -15,6 +15,14 @@ import {
 } from './pages';
 
 
+//  set theme to all pages
+const checkDefaultTheme = () => {
+  const isDarkTheme = localStorage.getItem('darkTheme') === 'true'
+  document.body.classList.toggle('dark-theme', isDarkTheme);
+  return isDarkTheme
+}
+
+const isDarkThemeEnabled = checkDefaultTheme()
 
 const router = createBrowserRouter([
   {
@@ -38,7 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/dashboard',
-        element: <DashboardLayout />,
+        element: <DashboardLayout isDarkThemeEnabled={isDarkThemeEnabled} />,
         children: [
           {
             index: true,                           //when we want to display the page when navigate on parent page we can use index as true

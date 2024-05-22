@@ -6,14 +6,16 @@ import BigSidebar from '../components/BigSidebar';
 import Navbar from '../components/Navbar';
 
 const DashboardContext = createContext()
-export default function DashboardLayout() {
+
+
+export default function DashboardLayout({ isDarkThemeEnabled }) {
 
   const user = { name: "Devi" };
 
 
 
   const [showSidebar, setShowSidebar] = useState(false);
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(isDarkThemeEnabled);
 
   const toggleSidebar = () => {
     console.log("+++++++++", showSidebar)
@@ -21,7 +23,13 @@ export default function DashboardLayout() {
   }
 
   const toggleDarkTheme = () => {
-    console.log("toggle dark theme")
+    const newDarkTheme = !isDarkTheme;
+    setIsDarkTheme(newDarkTheme);
+    document.body.classList.toggle('dark-theme', newDarkTheme) //to set theme for whole screen
+
+    //to persist the value so that after refreshing, user can view theme that they set either dark or light
+
+    localStorage.setItem('darkTheme', newDarkTheme)
   }
 
   const logoutUser = () => {
