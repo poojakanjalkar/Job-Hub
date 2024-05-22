@@ -4,18 +4,18 @@ import Wrapper from '../assets/wrappers/Dashboard';
 import SmallSidebar from '../components/SmallSidebar';
 import BigSidebar from '../components/BigSidebar';
 import Navbar from '../components/Navbar';
-
+import { checkDefaultTheme } from '../App';
 const DashboardContext = createContext()
 
 
-export default function DashboardLayout({ isDarkThemeEnabled }) {
+export default function DashboardLayout() {
 
   const user = { name: "Devi" };
 
 
 
   const [showSidebar, setShowSidebar] = useState(false);
-  const [isDarkTheme, setIsDarkTheme] = useState(isDarkThemeEnabled);
+  const [isDarkTheme, setIsDarkTheme] = useState(checkDefaultTheme());
 
   const toggleSidebar = () => {
     console.log("+++++++++", showSidebar)
