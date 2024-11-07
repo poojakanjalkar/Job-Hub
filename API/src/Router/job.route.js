@@ -1,4 +1,10 @@
 import { Router } from "express";
 const router = Router();
 
-router.get("/", getAllJobs);
+import { getAllJobs } from "../controller/job.controller.js";
+
+router.route("/").get(getAllJobs);
+
+module.exports = {
+  router,
+};

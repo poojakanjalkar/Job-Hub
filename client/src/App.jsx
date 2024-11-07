@@ -57,6 +57,8 @@ const router = createBrowserRouter([
             element: <AllJobs />,
 
           },
+
+
           {
             path: 'stats',
             element: <Stats />,

@@ -1,9 +1,8 @@
 //using ES6 in node
 import * as dotenv from "dotenv";
 dotenv.config();
-import express from "express";
 import morgan from "morgan";
-
+import router from "../API/src/Router/job.route.js";
 const app = express();
 
 if (process.env.NODE_ENV === "development") {
@@ -11,6 +10,7 @@ if (process.env.NODE_ENV === "development") {
 }
 app.use(express.json());
 
+app.use("/", router);
 app.get("/", (req, res) => {
   res.send("hello world");
 });
